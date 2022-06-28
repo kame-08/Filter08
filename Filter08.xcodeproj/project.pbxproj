@@ -11,6 +11,9 @@
 		2A9CB2FB286A843C00370E9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB2FA286A843C00370E9F /* ContentView.swift */; };
 		2A9CB2FD286A843D00370E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CB2FC286A843D00370E9F /* Assets.xcassets */; };
 		2A9CB300286A843D00370E9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CB2FF286A843D00370E9F /* Preview Assets.xcassets */; };
+		2A9CB30D286A8ABF00370E9F /* FilterContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB30C286A8ABF00370E9F /* FilterContentView.swift */; };
+		2A9CB30F286A914900370E9F /* FilterBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB30E286A914900370E9F /* FilterBannerView.swift */; };
+		2A9CB311286A93FB00370E9F /* FilterContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB310286A93FB00370E9F /* FilterContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		2A9CB2FA286A843C00370E9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A9CB2FC286A843D00370E9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A9CB2FF286A843D00370E9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2A9CB30C286A8ABF00370E9F /* FilterContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterContentView.swift; sourceTree = "<group>"; };
+		2A9CB30E286A914900370E9F /* FilterBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBannerView.swift; sourceTree = "<group>"; };
+		2A9CB310286A93FB00370E9F /* FilterContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A270DA4286A8513007333C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2A9CB2EC286A843C00370E9F = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +66,8 @@
 			children = (
 				2A9CB2F8286A843C00370E9F /* Filter08App.swift */,
 				2A9CB2FA286A843C00370E9F /* ContentView.swift */,
+				2A9CB306286A845800370E9F /* Content */,
+				2A270DA4286A8513007333C1 /* Model */,
 				2A9CB2FC286A843D00370E9F /* Assets.xcassets */,
 				2A9CB2FE286A843D00370E9F /* Preview Content */,
 			);
@@ -65,6 +80,48 @@
 				2A9CB2FF286A843D00370E9F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A9CB306286A845800370E9F /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB307286A846400370E9F /* FilterBanner */,
+				2A9CB308286A847400370E9F /* CustomToolBar */,
+				2A9CB309286A848F00370E9F /* FilterContentView */,
+				2A9CB30B286A84BC00370E9F /* ImagePicker */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		2A9CB307286A846400370E9F /* FilterBanner */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB30E286A914900370E9F /* FilterBannerView.swift */,
+			);
+			path = FilterBanner;
+			sourceTree = "<group>";
+		};
+		2A9CB308286A847400370E9F /* CustomToolBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomToolBar;
+			sourceTree = "<group>";
+		};
+		2A9CB309286A848F00370E9F /* FilterContentView */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB30C286A8ABF00370E9F /* FilterContentView.swift */,
+				2A9CB310286A93FB00370E9F /* FilterContentViewModel.swift */,
+			);
+			path = FilterContentView;
+			sourceTree = "<group>";
+		};
+		2A9CB30B286A84BC00370E9F /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9CB30F286A914900370E9F /* FilterBannerView.swift in Sources */,
 				2A9CB2FB286A843C00370E9F /* ContentView.swift in Sources */,
 				2A9CB2F9286A843C00370E9F /* Filter08App.swift in Sources */,
+				2A9CB311286A93FB00370E9F /* FilterContentViewModel.swift in Sources */,
+				2A9CB30D286A8ABF00370E9F /* FilterContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +327,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Filter08/Preview Content\"";
-				DEVELOPMENT_TEAM = NS2U56N5HL;
+				DEVELOPMENT_TEAM = 555Q448RLS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "カメラ使うよー";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "フォトライブラリーに保存するよー";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "フォトライブラリー使うよー";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -296,9 +359,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Filter08/Preview Content\"";
-				DEVELOPMENT_TEAM = NS2U56N5HL;
+				DEVELOPMENT_TEAM = 555Q448RLS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "カメラ使うよー";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "フォトライブラリーに保存するよー";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "フォトライブラリー使うよー";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
