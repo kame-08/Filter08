@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct FilterContentView: View {
-    //UIKitのImage
-    @State private var filterdImage: UIImage?
-    @StateObject private var ViewModel = FilterContentViewModel()
+    
+    @StateObject private var viewModel = FilterContentViewModel()
+    
     var body: some View {
         NavigationView {
             ZStack {
-                if let filterdImage = filterdImage {
+                if let filterdImage = viewModel.filterdImage {
                     Image(uiImage: filterdImage)
                 } else {
                     EmptyView()
@@ -32,23 +32,25 @@ struct FilterContentView: View {
             })
             .onAppear(){
                 //画面表示時の処理
-                ViewModel.apply(.onAppear)
+                viewModel.apply(.onAppear)
             }
-            .actionSheet(isPresented: $ViewModel.isShowActionSheet) {
-                actiomSheet
+            .actionSheet(isPresented: $viewModel.isShowActionSheet) {
+                actionSheet
             }
             
+            .sheet(isPresented: $viewModel.isShowImagePickerView) {
+                ImagePicker(isShown: $viewModel.isShowImagePickerView, image: $viewModel.image, sourceType: viewModel.selectedSourceType)
+            }
         }
-        
     }
     
-    var actiomSheet: ActionSheet {
+    var actionSheet: ActionSheet {
         var buttons: [ActionSheet.Button] = []
         //カメラ使えるか確認
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             //利用できる場合はボタン表示
             let cameraButton = ActionSheet.Button.default(Text("写真を撮る")){
-                ViewModel.apply(.tappedActionSheet(selectType: .camera))
+                viewModel.apply(.tappedActionSheet(selectType: .camera))
             }
             buttons.append(cameraButton)
         }
@@ -57,7 +59,7 @@ struct FilterContentView: View {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             //利用できる場合はボタン表示
             let photoLibraryButton = ActionSheet.Button.default(Text("アルバムから選択")){
-                ViewModel.apply(.tappedActionSheet(selectType: .photoLibrary))
+                viewModel.apply(.tappedActionSheet(selectType: .photoLibrary))
             }
             buttons.append(photoLibraryButton)
         }
