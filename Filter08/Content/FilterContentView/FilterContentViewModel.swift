@@ -27,6 +27,9 @@ final class FilterContentViewModel: ObservableObject {
     //フィルターバナー表示用フラグ
     @Published var isShowBanner = false
     
+    //フィルターを適応するFilterType
+    @Published var applyingFilter: FilterType? = nil
+    
     //Combineを実行するためのCancellable
     var cancellables:[Cancellable] = []
     

@@ -15,15 +15,18 @@ struct FilterContentView: View {
         NavigationView {
             ZStack {
                 if let filterdImage = viewModel.filterdImage {
-                    Image(uiImage: filterdImage).onTapGesture {
-                        withAnimation {
-                            viewModel.isShowBanner.toggle()
+                    Image(uiImage: filterdImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .onTapGesture {
+                            withAnimation {
+                                viewModel.isShowBanner.toggle()
+                            }
                         }
-                    }
                 } else {
                     EmptyView()
                 }
-                FilterBannerView()
+                FilterBannerView(isShowBanner: $viewModel.isShowBanner)
             }
             .navigationTitle("Filter App")
             .navigationBarItems(trailing: HStack {
@@ -68,8 +71,8 @@ struct FilterContentView: View {
             buttons.append(photoLibraryButton)
         }
         //キャンセルボタン
-        let canselButton = ActionSheet.Button.cancel(Text("キャンセル"))
-        buttons.append(canselButton)
+        let cancelButton = ActionSheet.Button.cancel(Text("キャンセル"))
+        buttons.append(cancelButton)
         
         let actionSheat = ActionSheet(title: Text("画像選択"),message: nil,buttons: buttons)
         
