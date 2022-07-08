@@ -15,7 +15,11 @@ struct FilterContentView: View {
         NavigationView {
             ZStack {
                 if let filterdImage = viewModel.filterdImage {
-                    Image(uiImage: filterdImage)
+                    Image(uiImage: filterdImage).onTapGesture {
+                        withAnimation {
+                            viewModel.isShowBanner.toggle()
+                        }
+                    }
                 } else {
                     EmptyView()
                 }

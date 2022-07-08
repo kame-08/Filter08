@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A159F04286E7D3E00377FEE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A159F03286E7D3E00377FEE /* ImagePicker.swift */; };
+		2A31B5D22873CB560077CF01 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A31B5D12873CB560077CF01 /* FilterType.swift */; };
 		2A9CB2F9286A843C00370E9F /* Filter08App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB2F8286A843C00370E9F /* Filter08App.swift */; };
 		2A9CB2FB286A843C00370E9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB2FA286A843C00370E9F /* ContentView.swift */; };
 		2A9CB2FD286A843D00370E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CB2FC286A843D00370E9F /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		2A159F03286E7D3E00377FEE /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		2A31B5D12873CB560077CF01 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		2A9CB2F5286A843C00370E9F /* Filter08.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Filter08.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9CB2F8286A843C00370E9F /* Filter08App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter08App.swift; sourceTree = "<group>"; };
 		2A9CB2FA286A843C00370E9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		2A9CB308286A847400370E9F /* CustomToolBar */ = {
 			isa = PBXGroup;
 			children = (
+				2A31B5D12873CB560077CF01 /* FilterType.swift */,
 			);
 			path = CustomToolBar;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A31B5D22873CB560077CF01 /* FilterType.swift in Sources */,
 				2A9CB30F286A914900370E9F /* FilterBannerView.swift in Sources */,
 				2A9CB2FB286A843C00370E9F /* ContentView.swift in Sources */,
 				2A9CB2F9286A843C00370E9F /* Filter08App.swift in Sources */,

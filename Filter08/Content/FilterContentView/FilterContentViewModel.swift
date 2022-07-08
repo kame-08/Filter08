@@ -24,6 +24,9 @@ final class FilterContentViewModel: ObservableObject {
     
     @Published var selectedSourceType: UIImagePickerController.SourceType = .camera
     
+    //フィルターバナー表示用フラグ
+    @Published var isShowBanner = false
+    
     //Combineを実行するためのCancellable
     var cancellables:[Cancellable] = []
     
