@@ -26,11 +26,13 @@ struct FilterContentView: View {
                 } else {
                     EmptyView()
                 }
-                FilterBannerView(isShowBanner: $viewModel.isShowBanner)
+                FilterBannerView(isShowBanner: $viewModel.isShowBanner, applyingFilter: $viewModel.applyingFilter)
             }
             .navigationTitle("Filter App")
             .navigationBarItems(trailing: HStack {
-                Button {} label: {
+                Button {
+                    viewModel.apply(.tappedSaveIcon)
+                } label: {
                     Image(systemName: "square.and.arrow.down")
                 }
                 Button {} label: {
@@ -48,7 +50,11 @@ struct FilterContentView: View {
             .sheet(isPresented: $viewModel.isShowImagePickerView) {
                 ImagePicker(isShown: $viewModel.isShowImagePickerView, image: $viewModel.image, sourceType: viewModel.selectedSourceType)
             }
+            .alert( isPresented: $viewModel.isShowAlert) {
+                Alert(title: Text(viewModel.alertTitle))
+            }
         }
+    
     }
     
     var actionSheet: ActionSheet {

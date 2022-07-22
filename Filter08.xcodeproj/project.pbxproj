@@ -52,7 +52,6 @@
 		2A9CB2EC286A843C00370E9F = {
 			isa = PBXGroup;
 			children = (
-				2A159F03286E7D3E00377FEE /* ImagePicker.swift */,
 				2A9CB2F7286A843C00370E9F /* Filter08 */,
 				2A9CB2F6286A843C00370E9F /* Products */,
 			);
@@ -126,6 +125,7 @@
 		2A9CB30B286A84BC00370E9F /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				2A159F03286E7D3E00377FEE /* ImagePicker.swift */,
 			);
 			path = ImagePicker;
 			sourceTree = "<group>";

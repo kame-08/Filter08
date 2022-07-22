@@ -11,15 +11,16 @@ import SwiftUI
 struct FilterBannerView: View {
     //親Viewが持つ
     @State var selectedFilter: FilterType? = nil
-    @Binding var isShowBanner:Bool
+    @Binding var isShowBanner: Bool
+    @Binding var applyingFilter: FilterType?
     var body: some View {
-        GeometryReader{geometry in
+        GeometryReader{ geometry in
             VStack {
                 Spacer()
                 VStack{
                     FilterTitleView(title: selectedFilter?.rawValue)
                     FilterIconContainerView(selectedFilter: $selectedFilter)
-                    FilterButtonContainerView(isShowBanner: $isShowBanner, selectedFilter: $selectedFilter)
+                    FilterButtonContainerView(isShowBanner: $isShowBanner, selectedFilter: $selectedFilter, applyingFilter: $applyingFilter)
                     
                 }
                 .background(Color.black.opacity(0.8))
@@ -33,7 +34,7 @@ struct FilterBannerView: View {
 
 struct FilterBannerView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterBannerView(isShowBanner: .constant(true))
+        FilterBannerView(isShowBanner: .constant(true), applyingFilter: .constant(.gaussianBlur))
         //        FilterImage(filterType: .gaussianBlur)
     }
 }
@@ -110,6 +111,7 @@ struct FilterIconContainerView: View {
 struct FilterButtonContainerView:View {
     @Binding var isShowBanner: Bool
     @Binding var selectedFilter: FilterType?
+    @Binding var applyingFilter: FilterType?
     var body: some View {
         HStack{
             Button {
@@ -131,6 +133,7 @@ struct FilterButtonContainerView:View {
             Button {
                 //確定する処理
                 isShowBanner = false
+                applyingFilter = selectedFilter
                 selectedFilter = nil
             } label: {
                 Image(systemName: "checkmark")
